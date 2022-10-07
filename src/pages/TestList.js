@@ -1,10 +1,11 @@
 import React from 'react'
 import HomeLayout from '../components/layouts/HomeLayout'
+import TestListCard from '../components/TestListComponents/TestListCard'
 
 function TestList() {
   return (
     <HomeLayout>
-      alo
+      <TestListCard/>
     </HomeLayout>
   )
 }

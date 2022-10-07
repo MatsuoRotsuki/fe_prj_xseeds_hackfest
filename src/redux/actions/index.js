@@ -1,4 +1,4 @@
-import { createActions } from 'redux-actions';
+import { createActions, createAction } from 'redux-actions';
 
 export const getType = (reduxAction) => {
   return reduxAction().type;
@@ -38,4 +38,10 @@ export const login = createActions({
   loginRequest: (payload) => payload,
   loginSuccess: (payload) => payload,
   loginFailure: (err) => err,
+<<<<<<< HEAD
 });
+
+export const logout = createAction('LOGOUT');
+=======
+});
+>>>>>>> 699a320e5fc9be80de1533e68aef323b9e483e58
