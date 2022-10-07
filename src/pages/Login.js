@@ -2,12 +2,28 @@ import React from 'react';
 import { Affix, Button, Checkbox, Form, Input, Typography } from 'antd';
 import { EyeInvisibleOutlined, EyeTwoTone, UserOutlined } from '@ant-design/icons';
 import { useNavigate } from 'react-router-dom';
+<<<<<<< HEAD
+import { useDispatch } from 'react-redux';
+import * as actions from '../redux/actions';
+=======
+>>>>>>> 699a320e5fc9be80de1533e68aef323b9e483e58
 
 const { Title } = Typography;
 
 function Login() {
 
   const navigate = useNavigate();
+<<<<<<< HEAD
+  const dispatch = useDispatch();
+  const onFinishLogin = (value) => {
+    if (value.email === 'loc@gmail.com' 
+      && value.password === '0358494928') {
+        dispatch(actions.login.loginRequest(value));
+        navigate('/');
+      }
+  }
+=======
+>>>>>>> 699a320e5fc9be80de1533e68aef323b9e483e58
 
   return (
     <div className='w-full bg-[#d9d9d9] wrapper h-[980px]'>
@@ -18,10 +34,14 @@ function Login() {
               Log in
             </Title>
             <Form
+<<<<<<< HEAD
+              onFinish={onFinishLogin}
+=======
               onFinish={(value) => {
                 navigate('/');
                 console.log(value);
               }}
+>>>>>>> 699a320e5fc9be80de1533e68aef323b9e483e58
             >
 
               <Form.Item
