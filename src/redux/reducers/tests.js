@@ -12,6 +12,12 @@ export default function testsReducers(state = INIT_STATE.tests, action) {
       return {
         ...state,
         isLoading: false,
+        data: action.payload
+      }
+    case getType(getTests.getTestsFailure):
+      return {
+        ...state,
+        isLoading: false,
       }
     default:
       return state;
