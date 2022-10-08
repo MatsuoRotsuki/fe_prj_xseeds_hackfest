@@ -30,7 +30,7 @@ function Timer({countdown}) {
   })
 
   return (
-    <div className='rounded-[20px]'>{remainingTime.hours}:{remainingTime.minutes}:{remainingTime.seconds}</div>
+    <div className='rounded-[20px] bg-white shadow-sm shadow-black text-4xl w-fit p-5 m-3'>{remainingTime.hours}:{remainingTime.minutes}:{remainingTime.seconds}</div>
   )
 }
 

@@ -1,13 +1,15 @@
 import axios from 'axios';
 
-const URL = 'http://localhost:8080';
+const URL = 'https://the-xseeds-hackfest.herokuapp.com/api/v1';
 
-export const fetchPosts = () => axios.get(`${URL}/api/posts`);
+export const fetchPosts = () => axios.get(`${URL}/posts`);
 
-export const createPost = (payload) => axios.post(`${URL}/api/post`, payload);
+export const createPost = (payload) => axios.post(`${URL}/post`, payload);
 
-export const fetchTests = () => axios.get(`${URL}/api/tests`);
+export const fetchTests = () => axios.get(`${URL}/tests`);
+
+export const fetchOneTest = (id) => axios.get(`${URL}/tests/${id}`);
 
 export const postTest = () => axios.post(`${URL}/api/test/post`);
 
-export const login = () => axios.post(`${URL}/api/login`);
+export const login = (payload) => axios.post(`${URL}/users/login`, payload);

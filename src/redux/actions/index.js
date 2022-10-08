@@ -22,6 +22,12 @@ export const getTests = createActions({
   getTestsFailure: (err) => err,
 });
 
+export const getTest = createActions({
+  getTestRequest: (payload) => payload,
+  getTestSuccess: (payload) => payload,
+  getTestFailure: (err) => err
+})
+
 export const createTest = createActions({
   createTestRequest: (payload) => payload,
   createTestSuccess: (payload) => payload,
@@ -40,4 +46,10 @@ export const login = createActions({
   loginFailure: (err) => err,
 });
 
-export const logout = createAction('LOGOUT');
+export const logout = createActions({
+  logout: (payload) => payload,
+});
+
+export const chooseAnswer = createAction('CHOOSE_ANSWER');
+
+export const unchooseAnswer = createAction('UNCHOOSE_ANSWER');

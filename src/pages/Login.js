@@ -8,15 +8,15 @@ import * as actions from '../redux/actions';
 const { Title } = Typography;
 
 function Login() {
+  const dispatch = useDispatch();
 
   const navigate = useNavigate();
-  const dispatch = useDispatch();
   const onFinishLogin = (value) => {
-    if (value.email === 'loc@gmail.com' 
-      && value.password === '0358494928') {
-        dispatch(actions.login.loginRequest(value));
-        navigate('/');
-      }
+    const data = new FormData();
+    data.append('email', value.email);
+    data.append('password', value.password);
+    dispatch(actions.login.loginRequest(data));
+    navigate('/');
   }
 
   return (
