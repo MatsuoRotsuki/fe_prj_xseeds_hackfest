@@ -34,7 +34,6 @@ function* fetchTestsSaga(action) {
 
 function* login(action){
   try {
-<<<<<<< HEAD
     // const res = yield call(api.login, action.payload);
     const user = {
       userId: 1,
@@ -47,11 +46,6 @@ function* login(action){
     }
     // yield put(actions.login.loginSuccess(res.data))
     yield put(actions.login.loginSuccess(user));
-=======
-    const user = yield call(api.login, action.payload);
-    console.log(user);
-    yield put(actions.login.loginSuccess(user.data))
->>>>>>> 699a320e5fc9be80de1533e68aef323b9e483e58
   } catch (err) {
     console.error(err);
     yield put(actions.login.loginFailure(err));
