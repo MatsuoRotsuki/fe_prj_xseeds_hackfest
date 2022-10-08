@@ -1,9 +1,9 @@
-import React from 'react'
+import React from "react";
+import CreatePracticeCard from "../components/CreatePracticeCard";
+import HomeLayout from "../components/layouts/HomeLayout";
 
 function CreateContest() {
-  return (
-    <div>CreateContest</div>
-  )
+  return <CreatePracticeCard></CreatePracticeCard>;
 }
 
-export default CreateContest
+export default CreateContest;

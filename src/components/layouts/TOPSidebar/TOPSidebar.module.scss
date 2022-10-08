@@ -1,0 +1,21 @@
+.sidebar_list {
+  display: block;
+  height: 70px;
+  line-height: 70px;
+  box-sizing: border-box;
+  text-transform: uppercase;
+  .sidebar_list_item {
+    box-sizing: border-box;
+    padding-left: 20px;
+    a {
+      font-size: 16px;
+    }
+    .icon {
+      font-size: 16px;
+      margin-right: 10px;
+    }
+  }
+  .sidebar_list_item:hover {
+    background-color: #e6f7ff;
+  }
+}
