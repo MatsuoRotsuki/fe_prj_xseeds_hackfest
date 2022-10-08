@@ -53,3 +53,9 @@ export const logout = createActions({
 export const chooseAnswer = createAction('CHOOSE_ANSWER');
 
 export const unchooseAnswer = createAction('UNCHOOSE_ANSWER');
+
+export const submitTest = createActions({
+  submitTestRequest: (payload) => payload,
+  submitTestSuccess: (payload) => payload,
+  submitTestFailure: (err) => err,
+})

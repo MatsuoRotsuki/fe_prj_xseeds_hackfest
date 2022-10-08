@@ -56,12 +56,23 @@ function* login(action){
   }
 }
 
+function* submitTestSaga(action){
+  try {
+    const res = yield call(api.submitTest, action.payload);
+    yield put(actions.submitTest.submitTestSuccess(res.data));
+  } catch (err) {
+    console.error(err);
+    yield put(actions.submitTest.submitTestFailure(err));
+  }
+}
+
 function* mySaga() {
   yield takeLatest(actions.getPosts.getPostsRequest, fetchPostsSaga);
   yield takeLatest(actions.createPost.createPostRequest, createPostSaga);
   yield takeLatest(actions.getTests.getTestsRequest, fetchTestsSaga);
   yield takeLatest(actions.login.loginRequest, login);
   yield takeLatest(actions.getTest.getTestRequest, fetchOneTestSaga);
+  yield takeLatest(actions.submitTest.submitTestRequest, submitTestSaga);
 }
 
 export default mySaga;

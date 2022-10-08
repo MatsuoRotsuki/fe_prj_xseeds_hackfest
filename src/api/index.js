@@ -10,6 +10,6 @@ export const fetchTests = () => axios.get(`${URL}/tests`);
 
 export const fetchOneTest = (id) => axios.get(`${URL}/tests/${id}`);
 
-export const postTest = () => axios.post(`${URL}/api/test/post`);
+export const submitTest = (payload) => axios.post(`${URL}/test/submit`);
 
 export const login = (payload) => axios.post(`${URL}/users/login`, payload);
