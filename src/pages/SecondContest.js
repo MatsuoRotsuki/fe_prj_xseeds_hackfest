@@ -9,7 +9,7 @@ import { testsState$, userState$ } from '../redux/selectors'
 import * as actions from '../redux/actions';
 import { Affix, Button } from 'antd'
 import TestAnchor from '../components/Contest/TestAnchor'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 
 function SecondContest() {
   const dispatch = useDispatch();
@@ -17,10 +17,11 @@ function SecondContest() {
   const test = useSelector(testsState$);
   const [now, setNow] = useState();
   const navigate = useNavigate();
+  const { id } = useParams();
 
   useEffect(() => {
-    dispatch(actions.getTest.getTestRequest(1));
-  }, [dispatch])
+    dispatch(actions.getTest.getTestRequest(id));
+  }, [dispatch, id])
 
   useEffect(() => {
     setNow(moment().add(20*60*1000+2000));
@@ -29,7 +30,7 @@ function SecondContest() {
   const onSubmit = () => {
     const wrongAnswer = test?.takeTest?.questions.filter(question => question.type == 2 && !JSON.parse(question.answer).some(answer => answer.isChosen && answer.isCorrect));
     const testId = test?.takeTest?.testId;
-    navigate('/thirdtest');
+    navigate(`/thirdtest/${id}`);
   }
   
   return (

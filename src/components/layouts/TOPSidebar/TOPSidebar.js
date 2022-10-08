@@ -6,8 +6,8 @@ import { Link } from "react-router-dom";
 function TOPSidebar() {
   const [role, setRole] = useState("teacher");
   const listFunctionnalityForAll = [
-    { name: "home", url: "./test-list", icon: "ti ti-home" },
-    { name: "Post", url: "./post", icon: "ti ti-layout-list-post" },
+    { name: "home", url: "./", icon: "ti ti-home" },
+    { name: "Post", url: "./posts", icon: "ti ti-layout-list-post" },
   ];
   const listFunctionalityForTeacher = [
     ...listFunctionnalityForAll,

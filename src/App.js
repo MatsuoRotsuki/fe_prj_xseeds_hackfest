@@ -27,9 +27,9 @@ function App() {
         <Route path="/signup" element={<Signup/>} />
         <Route element={<ProtectedRoute user={user} />}>
           <Route path='/' element={<TestList user={user} />} />
-          <Route path='/takecontest' element={<Contest/>} />
-          <Route path='/secondtest' element={<SecondContest/>} />
-          <Route path='/thirdtest' element={<ThirdContest/>} />
+          <Route path='/takecontest/:id' element={<Contest/>} />
+          <Route path='/secondtest/:id' element={<SecondContest/>} />
+          <Route path='/thirdtest/:id' element={<ThirdContest/>} />
         </Route>
       </Routes>
     </Router>
