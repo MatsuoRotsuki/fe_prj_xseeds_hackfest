@@ -20,7 +20,7 @@ function Navbar() {
           label: (
             <div 
               onClick={() => {
-                dispatch(actions.logout())
+                dispatch(actions.logout.logout(), {})
                 navigate('/login');
               }}>
               Log out

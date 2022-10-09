@@ -13,7 +13,7 @@ function HomeLayout({children}) {
         <div>
           <TOPSidebar/>
         </div>
-        <div className='w-full wrapper flex flex-col overflow-y-auto'>
+        <div className='w-full wrapper flex flex-col overflow-y-auto items-center p-3'>
           {children}
         </div>
       </div>

@@ -12,6 +12,9 @@ import { useSelector } from 'react-redux';
 import { userState$ } from './redux/selectors';
 import ProtectedRoute from './components/ProtectedRoute';
 import Contest from './pages/Contest';
+import SecondContest from './pages/SecondContest';
+import ThirdContest from './pages/ThirdContest';
+
 
 function App() {
 
@@ -23,10 +26,11 @@ function App() {
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup/>} />
-        <Route path='/takecontest' element={<Contest/>} />
         <Route element={<ProtectedRoute user={user} />}>
           <Route path='/' element={<TestList user={user} />} />
-          
+          <Route path='/takecontest/:id' element={<Contest/>} />
+          <Route path='/secondtest/:id' element={<SecondContest/>} />
+          <Route path='/thirdtest/:id' element={<ThirdContest/>} />
         </Route>
       </Routes>
     </Router>

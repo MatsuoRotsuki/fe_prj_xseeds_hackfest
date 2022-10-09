@@ -18,10 +18,10 @@ export default function loginReducers(state = INIT_STATE.user, action) {
 				...state,
 				user: null,
 			}
-		case getType(logout):
+		case getType(logout.logout):
 			return {
 				...state,
-				user: null,
+				user: action.payload,
 			}
     default:
       return state;

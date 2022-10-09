@@ -6,6 +6,7 @@ export const INIT_STATE = {
   tests: {
     isLoading: false,
     data: [],
+    takeTest: null,
   },
   user: null,
 }

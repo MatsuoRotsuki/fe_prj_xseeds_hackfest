@@ -1,0 +1,63 @@
+.createrCard {
+  margin-top: 10px;
+  background-color: white;
+  width: 500px;
+  border-radius: 20px;
+  border: 1px solid #f0f0f0;
+  padding: 20px;
+  border-radius: 10px;
+  & > textarea {
+    height: 100px;
+    width: 100%;
+    border: 1px solid #f0f0f0;
+    padding: 10px;
+  }
+  .groupAnswer {
+    margin-top: 10px;
+  }
+}
+
+.answer {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: #f0f0f0;
+  padding: 10px 0px;
+  border-radius: 10px;
+  margin-top: 10px;
+  textarea {
+    height: 50px;
+    width: 80%;
+    border: 1px solid #f0f0f0;
+    padding: 10px;
+    border: none;
+  }
+  h1 {
+    border: 1px solid black;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    cursor: pointer;
+    background-color: white;
+  }
+}
+.file {
+  display: flex;
+  justify-content: end;
+  label {
+    display: block;
+    width: fit-content;
+    padding: 5px;
+    border: 1px solid #40a9ff;
+    border-radius: 10px;
+    margin-left: 10px;
+    .custom_file_input {
+      border: none;
+      display: none;
+    }
+    i {
+      margin-right: 10px;
+    }
+  }
+}

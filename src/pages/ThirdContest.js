@@ -11,27 +11,25 @@ import { Affix, Button } from 'antd'
 import TestAnchor from '../components/Contest/TestAnchor'
 import { useNavigate, useParams } from 'react-router-dom'
 
-function Contest() {
-
+function ThirdContest() {
   const dispatch = useDispatch();
   const user = useSelector(userState$);
   const test = useSelector(testsState$);
   const [now, setNow] = useState();
   const navigate = useNavigate();
   const { id } = useParams();
-
   useEffect(() => {
     dispatch(actions.getTest.getTestRequest(id));
-  }, [dispatch, id])
+  }, [dispatch])
 
   useEffect(() => {
-    setNow(moment().add(10000));
+    setNow(moment().add(20*60*1000+2000));
   }, []);
 
   const onSubmit = () => {
-    const wrongAnswer = test?.takeTest?.questions.filter(question => question.type == 3 && !JSON.parse(question.answer).some(answer => answer.isChosen && answer.isCorrect));
+    const wrongAnswer = test?.takeTest?.questions.filter(question => question.type == 1 && !JSON.parse(question.answer).some(answer => answer.isChosen && answer.isCorrect));
     const testId = test?.takeTest?.testId;
-    navigate(`/secondtest/${id}`);
+    navigate(`/takecontest/${id}`);
   }
   
   return (
@@ -39,7 +37,7 @@ function Contest() {
       <div className='flex flex-row justify-between'>
         <div className='w-full wrapper flex flex-col items-center'>
           {
-            test?.takeTest?.questions.map((question, index) => question.type == 3 && (
+            test?.takeTest?.questions.map((question, index) => question.type == 1 && (
               <div id={"Q" + question?.questionId} key={`Q${question?.questionId}`}>
                 <QuestionCard key={question?.questionId} question={question} index={index+1} />
               </div>
@@ -61,7 +59,7 @@ function Contest() {
                 createdDate={test?.takeTest?.createdDate}
               />
               <Timer countdown={now} triggerOnTimeUp={onSubmit}/>
-              <TestAnchor questions={test?.takeTest?.questions} type={3}/>
+              <TestAnchor questions={test?.takeTest?.questions} type={1}/>
             </div>
           </Affix>
         </div>
@@ -70,4 +68,4 @@ function Contest() {
   )
 }
 
-export default Contest
+export default ThirdContest
