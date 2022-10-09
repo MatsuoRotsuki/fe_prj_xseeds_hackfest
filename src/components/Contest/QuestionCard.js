@@ -4,6 +4,7 @@ import { ExclamationCircleOutlined } from '@ant-design/icons'
 import { useDispatch } from 'react-redux';
 import * as actions from '../../redux/actions';
 
+
 const alphabetOrder = ['A', 'B', 'C', 'D', 'E'];
 
 function QuestionCard({question, index}) {
@@ -36,6 +37,7 @@ function QuestionCard({question, index}) {
               {alphabetOrder[idx]}. {answer?.content}
             </div>
           ))}
+
       </div>
     </div>
   )
